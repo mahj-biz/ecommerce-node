@@ -11,11 +11,22 @@
           <% for (let i = 0; i < data.length; i++) { %>
             <!-- Sample Product  -->
           <div class="product">
-            <img src="assets/<%= data[i].product_image_url %>" alt="altProduct<%= data[i].id %>" />
+            <img src="<%= data[i].product_image_url %>" alt="altProduct<%= data[i].id %>" />
             <h2><%= data[i].name %></h2>
             <p><%= data[i].description %></p>
-            <p class="price"><%= data[i].currency %><%= data[i].price %></p>
-            <button class="add-to-cart">Add to Cart</button>
+            <p class="price"><%= data[i].currency %><%= data[i].price %></p>            
+            <form action="/add-cart" method="post" style="width: 100%" id="form<%= data[i].id %>">
+              <input
+                type="number"
+                style="display: none"
+                name="productId"
+                id="product_id"
+                value="<%= data[i].id%>"
+              />
+              <button style="display: block; width: 100%" type="submit">
+                Add to cart
+              </button>
+              </form>
           </div>
             <% } %>
 

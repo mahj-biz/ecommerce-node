@@ -7,6 +7,7 @@ const getAllCartItems = async (req, res) => {
   const titletext = "Carts";
   const products = await query(
     `select
+    a.id as cart_id,
     a.quantity,
     b.id,
     b.name,

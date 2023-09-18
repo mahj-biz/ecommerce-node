@@ -12,9 +12,10 @@ const getAllProducts = async (req, res) => {
   let qtydata = 0;
   
   if(qty_products.rows.length >0){
-    qtydata = qty_products.rows.length;
+    qtydata = qty_products.rows[0].count;
   }
 
+  
   //console.log(qtydata)
   res.render("pages/index", { title: titletext, data: data, cart_qty : qtydata });
 };

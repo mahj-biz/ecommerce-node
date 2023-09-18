@@ -168,3 +168,42 @@ button {
   cursor: pointer;
   font-size: 16px;
 }
+
+
+
+.new-product {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.new-product h1 {
+  text-align: center;
+  color: #333;
+}
+
+.new-product form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-product label {
+  margin-top: 10px;
+  color: #555;
+}
+
+.new-product input, .new-product textarea, .new-product select {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.new-product button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+}

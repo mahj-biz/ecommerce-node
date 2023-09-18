@@ -7,3 +7,7 @@ function clickCartButton() {
 function clickHomeButton() {
   location.replace("/");
 }
+
+function clickAddProductButton() {
+  location.replace("/add-product");
+}

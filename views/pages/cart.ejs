@@ -13,8 +13,8 @@
           <% for (let i = 0; i < data.length; i++) { %>
           
           <div class="cart-item">
-            <img src="assets/<%= data[i].product_image_url %>" alt="altProduct<%= data[i].id %>" />
-            <div class="item-details">
+            <img src="<%= data[i].product_image_url %>" alt="altProduct<%= data[i].id %>" />
+            <div class="item-details">            
               <h3><%= data[i].name %></h3>
               <p class="price"><%= data[i].currency %><%= data[i].price %></p>
             </div>
@@ -25,7 +25,9 @@
               <p class="total-price"><%= data[i].currency %><%= data[i].price %></p>
             </div>
             <div class="item-actions">
-              <button>Remove</button>
+              <form action="/delete-cart-item/<%= data[i].cart_id %>" method="post">
+                <button>Remove</button>
+              </form>
             </div>
           </div>
 
