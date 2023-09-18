@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../components/head',{title: title}); %>
+  <body>
+    <%- include('../components/header',{cartButtonShow:false, cart_qty : 0 }); %>
+    <main>
+      <section class="cart-items">
+        <!-- Sample Cart Items -->
+       
+
+        <% if (data.length > 0) { %>
+
+          <% for (let i = 0; i < data.length; i++) { %>
+          
+          <div class="cart-item">
+            <img src="assets/<%= data[i].product_image_url %>" alt="altProduct<%= data[i].id %>" />
+            <div class="item-details">
+              <h3><%= data[i].name %></h3>
+              <p class="price"><%= data[i].currency %><%= data[i].price %></p>
+            </div>
+            <div class="item-quantity">
+              <input type="number" name="quantity" value="<%= data[i].quantity %>" />
+            </div>
+            <div class="item-total">
+              <p class="total-price"><%= data[i].currency %><%= data[i].price %></p>
+            </div>
+            <div class="item-actions">
+              <button>Remove</button>
+            </div>
+          </div>
+
+
+            <% } %>
+
+          <%} else { %>
+
+          <p> No Data Found </p>
+
+          <% } %>
+
+
+
+        <!-- Add more cart items here -->
+      </section>
+    </main>
+  </body>
+</html>
